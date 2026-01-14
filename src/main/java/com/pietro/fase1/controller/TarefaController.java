@@ -16,8 +16,8 @@ public class TarefaController {
     private final TarefaService service;
 
     @GetMapping
-    public ResponseEntity<List<TarefaDTO>> listar(){
-        return ResponseEntity.ok(service.listarTodas());
+    public ResponseEntity<List<TarefaDTO>> listarCompleto(){
+        return ResponseEntity.ok(service.listarTodasCompleto());
     }
 
     @GetMapping("/{id}")
