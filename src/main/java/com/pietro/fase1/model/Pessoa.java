@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,8 +31,8 @@ public class Pessoa {
 
 
     // TIPO SANGUINEO É REUTILIZADO POR VÁRIAS PESSOAS, NAO É EXCLUSIVO, ENTAO SÓ USAMOS MANY TO ONE EM UM LADO,
-    //  SEM LIDAR COM LISTA NENHUMA.
-    @ManyToOne 
+    // SEM LIDAR COM LISTA NENHUMA.
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_sanguineo_id")
     private TipoSanguineo tipoSanguineo;
 }
